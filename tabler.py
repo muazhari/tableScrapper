@@ -17,7 +17,7 @@ from os.path import isfile
 import math
 
 
-# Grouping a set of element for n
+# Grouping to a set of elements for n
 def grouper(iterable, n, fillvalue=None):
     args = [iter(iterable)] * n
     return zip_longest(*args, fillvalue=fillvalue)
