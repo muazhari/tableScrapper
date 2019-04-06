@@ -15,11 +15,13 @@ class spiderJadwal(scrapy.Spider):
     fileName = 'jadwal' + '.' + fileFormat
     fileAvailable = os.path.isfile(fileName)
 
-    if not fileAvailable:
-        custom_settings = {
-            'FEED_FORMAT': fileFormat,
-            'FEED_URI': fileName
-        }
+    if fileAvailable:
+        open(fileName, 'w+')
+
+    custom_settings = {
+        'FEED_FORMAT': fileFormat,
+        'FEED_URI': fileName
+    }
 
     def parse(self, response):
         item = {}
