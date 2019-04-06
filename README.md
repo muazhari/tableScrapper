@@ -9,7 +9,7 @@ $ pip install -r requirements.txt
 ```
 
 # Usage
-Menggunakan Fungsi utama :
+Menggunakan fungsi utama :
 ```
 kelas.search('hari', 'jam', 'tempat/ruang', 'kelas')
 ```
