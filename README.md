@@ -1,5 +1,7 @@
 # kelasScrap
 > Pencarian kelas dengan sedikit advancement.
+### Feature
+- Only scraping and querying.
 
 # Installation
 ```sh
@@ -7,9 +9,6 @@ $ pip install -r requirements.txt
 ```
 
 # Usage
-### Feature
-- Only scraping and querying.
-
 Menggunakan Fungsi utama :
 ```
 kelas.search('hari', 'jam', 'tempat/ruang', 'kelas')
