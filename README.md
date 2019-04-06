@@ -20,7 +20,7 @@ Dimana hasil pencarian kelas yang ingin dicari 1IA05 ialah :
 kelas.search('senin', '1', 'd', '1ia05')
 ```
 Hasil pencarian akan kosong apabila tidak ada yang match.
-Atau kosongkan argumen menjadi ```''``` untuk memproses semua record selabel tanpa dibandingkan.
+Kosongkan argumen menjadi ```''``` agar memproses semua record selabel tanpa dibandingkan.
 
 Speed of run depends on your hardware and connection.
 ```sh
