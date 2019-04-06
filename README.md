@@ -13,7 +13,7 @@ Menggunakan fungsi utama :
 ```
 kelas.search('hari', 'jam', 'tempat/ruang', 'kelas')
 ```
-Mencari kelas pada hari Senin sekitar jam 1 dan bertempat disekitar Kampus D. 
+Mencari kelas pada hari Senin sekitar jam ke-1 dan bertempat disekitar Kampus D. 
 Dimana hasil pencarian kelas yang ingin dicari 1IA05 ialah :
 ```
 kelas.search('senin', '1', 'd', '1ia05')

@@ -26,14 +26,6 @@ class spiderKelas(scrapy.Spider):
         TABLE_PATH = MAIN_PATH + '/table[1]'
         TABLE_SELECTOR = response.xpath(TABLE_PATH)
 
-        # print(TABLE_SELECTOR.extract(),
-        #       '----------------------------------------------------------')
-        # if self.filestatus is False:
-        # for tset in TABLE_SELECTOR:
-        #     nomor = tset.xpath('.//tr[1]/th[1]/text()').extract_first()
-        #     kelas = tset.xpath('.//tr[1]/th[2]/text()').extract_first()
-        #     dosen = tset.xpath('.//tr[1]/th[3]/text()').extract_first()
-
         RECORD_XPATH = './/tr[position()>1 and position()<=last()]'
         RECORD_SELECTOR = TABLE_SELECTOR.xpath(RECORD_XPATH)
 
