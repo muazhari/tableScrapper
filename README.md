@@ -8,7 +8,7 @@ $ pip install -r requirements.txt
 
 # Usage
 ### Feature
-Only scraping and querying.
+- Only scraping and querying.
 
 Menggunakan Fungsi utama :
 ```
