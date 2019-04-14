@@ -2,6 +2,7 @@ from scrapy.crawler import CrawlerProcess
 from multiprocessing import Pool
 import os
 
+
 def _crawl(spider_name=None):
     if spider_name:
         cmd = 'scrapy runspider ' + '.\spiders\\' + spider_name + '.py'
