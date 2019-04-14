@@ -21,10 +21,10 @@ class spiderKelas(scrapy.Spider):
     }
 
     def parse(self, response):
-        MAIN_PATH = '/html/body/div[1]/main/section/div/div/div/div[3]/div/div[2]/div[3]'
+        MAIN_XPATH = '/html/body/div[1]/main/section/div/div/div/div[3]/div/div[2]/div[3]'
 
-        TABLE_PATH = MAIN_PATH + '/table[1]'
-        TABLE_SELECTOR = response.xpath(TABLE_PATH)
+        TABLE_XPATH = MAIN_XPATH + '/table[1]'
+        TABLE_SELECTOR = response.xpath(TABLE_XPATH)
 
         RECORD_XPATH = './/tr[position()>1 and position()<=last()]'
         RECORD_SELECTOR = TABLE_SELECTOR.xpath(RECORD_XPATH)
@@ -36,7 +36,7 @@ class spiderKelas(scrapy.Spider):
                 'dosen': rset.xpath('.//td[3]/text()').extract_first(),
             }
 
-        NEXT_PAGE_SELECTOR = MAIN_PATH + '/center/nav/ul/ul/li[last()]/a/@href'
+        NEXT_PAGE_SELECTOR = MAIN_XPATH + '/center/nav/ul/ul/li[last()]/a/@href'
         next_page = response.xpath(NEXT_PAGE_SELECTOR).extract_first()
         if next_page:
             yield scrapy.Request(
