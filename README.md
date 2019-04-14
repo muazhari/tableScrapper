@@ -9,7 +9,7 @@ $ pip install -r requirements.txt
 ```
 
 # Usage
-Pencarian kelas :
+### Pencarian kelas
 ```
 search.kelas('hari', 'jam', 'tempat/ruang', 'kelas')
 ```
@@ -19,19 +19,19 @@ Dimana hasil pencarian kelas yang ingin dicari 1IA05 ialah :
 search.kelas('senin', '1', 'd', '1ia05')
 ```
 
-Pencarian UTS :
+### Pencarian UTS
 ```
 search.midTest('matkul', 'hari', 'tanggal', 'waktu', 'ruang', 'kelas')
 ```
 Mencari ujian mata kuliah Matematika Dasar yang dimana melekat pada kelas 1IA ialah :
 ```
-search.midTest('matematika dasar', '', '', 'waktu', '', '1ia')
+search.midTest('matematika dasar', '', '', '', '', '1ia')
 ```
 
 Hasil pencarian akan kosong apabila tidak ada yang match.
 Kosongkan argumen menjadi ```''``` agar memproses semua record selabel tanpa dibandingkan.
 
-Speed of run depends on your hardware and connection.
+Runtime depends on your hardware and connection.
 ```sh
 $ python main.py
 ```
