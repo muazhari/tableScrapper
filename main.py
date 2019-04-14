@@ -1,37 +1,30 @@
 import crawlSpiders
-import queryJ
+import queryScrap
 import os
 import pandas as pd
 
-def main():
-    spiders = ['spiderKelas', 'spiderJadwal', 'spiderSiswa1', 'spiderSiswa2']
-    reqFiles = ['kelas.csv', 'jadwal.csv', 'siswa1.csv', 'siswa2.csv']
 
-    if not(all(os.path.isfile(file) for file in reqFiles)):
+def main():
+    spidersFiles = dict(spiderKelas='kelas.csv',
+                        spiderJadwal='jadwalKelas.csv',
+                        spiderMidTest='jadwalMidTest.csv',
+                        spiderSiswa1='siswa1.csv',
+                        spiderSiswa2='siswa2.csv')
+
+    isAvailabe = all(os.path.isfile(file) for file in spidersFiles.values())
+
+    if not(isAvailabe):
+        spiders = list(spidersFiles.keys())
         crawlSpiders._crawl(spiders[0])
         crawlSpiders.run(spiders[1:])
 
-    files = dict(
-                    kelas = pd.read_csv("kelas.csv"),
-                    jadwal = pd.read_csv("jadwal.csv"),
-                    siswa1 = pd.read_csv("siswa1.csv"),
-                    siswa2 = pd.read_csv("siswa2.csv"),
-                )
+    files = dict([(os.path.splitext(file)[0],
+                   pd.read_csv(file)) for file in spidersFiles.values()])
 
-    kelas = queryJ.queryJ(files)
-    '''
-    kelas.search('hari', 'jam', 'tempat/ruang', 'kelas')
+    db = queryScrap.database(files)
+    print(db.search.kelas('', '', '', '1ia05', ''))
+    print(db.search.midTest('', '', '', '', '', '1ia05'))
 
-    Contoh penggunaan fungsi yaitu kelas.search('senin', '1', 'd', '1ia05').
-
-    Yang artinya mencari kelas pada hari Senin sekitar jam 1 dan bertempat disekitar Kampus D. Dimana hasil pencarian kelas ingin dicari adalah 1ia05.
-
-    Hasil pencarian akan kosong apabila tidak ada yang match.
-
-    Atau kosongkan argumen menjadi '' untuk mengeluarkan kondisi.
-    (memproses semua record selabel tanpa dibandingkan)
-    '''
-    print(kelas.search('', '', '', '1ia05'))
 
 if __name__ == '__main__':
     main()
