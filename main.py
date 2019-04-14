@@ -11,7 +11,8 @@ def main():
                         spiderSiswa1='siswa1.csv',
                         spiderSiswa2='siswa2.csv')
 
-    isFilesAvailable = all(os.path.isfile(file) for file in spidersFiles.values())
+    isFilesAvailable = all(os.path.isfile(file)
+                           for file in spidersFiles.values())
 
     if not(isFilesAvailable):
         spiders = list(spidersFiles.keys())
