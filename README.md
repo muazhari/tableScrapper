@@ -31,7 +31,7 @@ search.midTest('matematika dasar', '', '', 'waktu', '', '1ia')
 Hasil pencarian akan kosong apabila tidak ada yang match.
 Kosongkan argumen menjadi ```''``` agar memproses semua record selabel tanpa dibandingkan.
 
-Speed of run depends on your hardware and connection.
+Runtime depends on your hardware and connection.
 ```sh
 $ python main.py
 ```
