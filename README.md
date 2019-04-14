@@ -9,15 +9,25 @@ $ pip install -r requirements.txt
 ```
 
 # Usage
-Menggunakan fungsi utama :
+Pencarian kelas :
 ```
-kelas.search('hari', 'jam', 'tempat/ruang', 'kelas')
+search.kelas('hari', 'jam', 'tempat/ruang', 'kelas')
 ```
-Mencari kelas pada hari Senin sekitar jam ke-1 dan bertempat disekitar Kampus D. 
+Mencari kelas pada hari Senin sekitar jam ke-1 dan bertempat disekitar Kampus D.
 Dimana hasil pencarian kelas yang ingin dicari 1IA05 ialah :
 ```
-kelas.search('senin', '1', 'd', '1ia05')
+search.kelas('senin', '1', 'd', '1ia05')
 ```
+
+Pencarian UTS :
+```
+search.midTest('matkul', 'hari', 'tanggal', 'waktu', 'ruang', 'kelas')
+```
+Mencari ujian mata kuliah Matematika Dasar yang dimana melekat pada kelas 1IA ialah :
+```
+search.midTest('matematika dasar', '', '', 'waktu', '', '1ia')
+```
+
 Hasil pencarian akan kosong apabila tidak ada yang match.
 Kosongkan argumen menjadi ```''``` agar memproses semua record selabel tanpa dibandingkan.
 
@@ -33,4 +43,3 @@ $ python main.py
 
 # Authors
 - Muhammad Kharisma Azhari - Initial work
-
