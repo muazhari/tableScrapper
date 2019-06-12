@@ -1,4 +1,7 @@
 # kelasScrap
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/052f0846ac584850af60a58da032c7d8)](https://app.codacy.com/app/muazhari/kelasScrap?utm_source=github.com&utm_medium=referral&utm_content=muazhari/kelasScrap&utm_campaign=Badge_Grade_Dashboard)
+
 > Pencarian kelas dengan sedikit advancement.
 ### Feature
 - Only scraping and querying.
